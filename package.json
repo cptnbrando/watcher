@@ -1,0 +1,28 @@
+{
+  "name": "watcher",
+  "version": "1.0.0",
+  "description": "Watches a directory and uploads any new files to social medias",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cptnbrando/watcher.git"
+  },
+  "keywords": [
+    "chokidar"
+  ],
+  "type": "module",
+  "author": "Captain Brando!",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cptnbrando/watcher/issues"
+  },
+  "homepage": "https://github.com/cptnbrando/watcher#readme",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "googleapis": "^134.0.0"
+  }
+}
