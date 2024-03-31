@@ -1,5 +1,6 @@
 import chokidar from 'chokidar';
 import { uploadToYoutube } from './src/youtube.js';
+import { uploadToTiktok } from './src/tiktok.js';
 
 
 // Check if a directory was provided as a command-line argument
@@ -18,7 +19,20 @@ const watcher = chokidar.watch(folderPath, {
 watcher
     .on('add', (filePath) => {
         console.log(`New file added: ${filePath}`);
-        uploadToYoutube(filePath);
+        (async () => {
+            try {
+                await Promise.all([
+                    uploadToYoutube(filePath),
+                    uploadToTiktok(filePath)
+                ]);
+                console.log('Both uploads completed successfully');
+                // Delete the file here
+            } catch (error) {
+                console.error(`Error occurred during upload: ${error}`);
+                // Handle error and continue with the rest of the upload calls
+            }
+        })();
+        console.log("donezo");
         // Do something with the new file
     })
     .on('error', (error) => {

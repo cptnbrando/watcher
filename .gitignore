@@ -3,7 +3,7 @@
 *credentials.json
 *token.json
 watchthisfolder/*
-
+!watchthisfolder/.gitkeep
 
 
 
